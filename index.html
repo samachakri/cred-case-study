@@ -7,7 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0a0a0e;--s1:#111118;--s2:#17171f;--s3:#1e1e28;--bd:#28283c;--bd2:#1f1f2e;
+  --bg:#09090d;--s1:#111118;--s2:#17171f;--s3:#1e1e28;
+  --bd:#28283c;--bd2:#1f1f2e;
   --gold:#c9a84c;--gold2:#e2c060;--gold3:#f0d080;
   --gd:rgba(201,168,76,.12);--gd2:rgba(201,168,76,.06);--gb:rgba(201,168,76,.24);
   --red:#d95f5f;--redd:rgba(217,95,95,.10);--redb:rgba(217,95,95,.22);
@@ -21,7 +22,7 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--tx);font-family:'Inter',sans-serif;font-size:16px;line-height:1.75;overflow-x:hidden}
 body::before{content:'';position:fixed;top:-240px;right:-160px;width:640px;height:640px;background:radial-gradient(circle,rgba(201,168,76,.065) 0%,transparent 68%);pointer-events:none;z-index:0}
 
-nav{position:sticky;top:0;z-index:200;background:rgba(10,10,14,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd2);padding:0 56px;height:56px;display:flex;align-items:center;justify-content:space-between}
+nav{position:sticky;top:0;z-index:200;background:rgba(9,9,13,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd2);padding:0 56px;height:56px;display:flex;align-items:center;justify-content:space-between}
 .nav-pills{display:flex;gap:8px}
 .np{display:inline-flex;align-items:center;padding:4px 11px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase}
 .np-ft{background:var(--blued);color:var(--blue);border:1px solid var(--blueb)}
@@ -33,7 +34,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(10,10,14,.9);backdrop-filt
 .hero-lbl{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--dim);letter-spacing:.13em;text-transform:uppercase}
 h1{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,76px);font-weight:800;line-height:1.06;letter-spacing:-.03em;max-width:880px;margin-bottom:24px}
 h1 em{font-style:italic;color:var(--gold)}
-.hero-sub{font-size:18px;line-height:1.65;color:var(--muted);max-width:560px;margin-bottom:52px}
+.hero-sub{font-size:18px;line-height:1.65;color:var(--muted);max-width:580px;margin-bottom:52px}
 .meta-strip{display:flex;gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;max-width:860px}
 .mc{background:var(--s1);padding:16px 22px;flex:1}
 .mc-l{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
@@ -52,6 +53,9 @@ p{font-size:15.5px;color:var(--muted);line-height:1.78;margin-bottom:16px}
 p strong{color:var(--tx);font-weight:600}
 p em{color:var(--gold);font-style:italic}
 
+/* source badge */
+.src-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);background:var(--s2);border:1px solid var(--bd);border-radius:4px;padding:1px 6px;margin-left:4px;vertical-align:middle;letter-spacing:.04em}
+
 .tldr{background:var(--s1);border:1px solid var(--bd);border-left:3px solid var(--gold);border-radius:var(--r);padding:32px;margin:40px 0}
 .tldr-h{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:22px}
 .tldr-g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
@@ -64,6 +68,15 @@ p em{color:var(--gold);font-style:italic}
 .sc{background:var(--s1);padding:22px 16px;text-align:center}
 .sc-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);display:block;margin-bottom:4px}
 .sc-l{font-size:11.5px;color:var(--muted);line-height:1.45}
+.sc-src{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--dim);margin-top:5px;display:block}
+
+/* FY progress table */
+.fy-table{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;margin:24px 0}
+.fy-cell{background:var(--s1);padding:14px 16px;text-align:center}
+.fy-year{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.fy-val{font-size:16px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.fy-delta{font-size:11px}
+.fd-up{color:var(--grn)}.fd-dn{color:var(--red)}
 
 .tw{overflow-x:auto;margin:20px 0;border-radius:var(--r);overflow:hidden;border:1px solid var(--bd)}
 table{width:100%;border-collapse:collapse;font-size:13.5px}
@@ -170,7 +183,7 @@ blockquote cite{font-size:11px;color:var(--dim);font-family:'JetBrains Mono',mon
 .src-list li:last-child{border-bottom:none}
 .src-dot{color:var(--gold);flex-shrink:0;margin-top:2px}
 
-/* ── PROTOTYPE SECTION ── */
+/* ── PROTOTYPE ── */
 .proto-section{margin:40px 0;background:linear-gradient(135deg,#0f0f18,#0a0a12);border:1px solid var(--gb);border-radius:20px;padding:40px;text-align:center}
 .proto-kicker{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);margin-bottom:14px}
 .proto-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:8px}
@@ -204,11 +217,11 @@ blockquote cite{font-size:11px;color:var(--dim);font-family:'JetBrains Mono',mon
 .pm-card-body{flex:1;overflow-y:auto;padding:14px 20px 20px;scrollbar-width:none}
 .pm-card-body::-webkit-scrollbar{display:none}
 
-/* Screen 0 */
-.s0-headline{font-size:22px;font-weight:800;color:#000;line-height:1.2;margin:8px 0 8px;font-family:'Inter',sans-serif}
+/* Screen 0 – Problem */
+.s0-h{font-size:22px;font-weight:800;color:#000;line-height:1.2;margin:8px 0 8px;font-family:'Inter',sans-serif}
 .s0-sub{font-size:13px;color:#555;line-height:1.6;margin-bottom:14px}
 .s0-box{background:#f8f8f8;border-radius:14px;padding:14px;margin-bottom:14px}
-.s0-box-h{font-family:'JetBrains Mono',monospace;font-size:9px;color:#999;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.s0-bh{font-family:'JetBrains Mono',monospace;font-size:9px;color:#999;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
 .s0-chat{background:#e8efff;border-radius:10px 10px 10px 2px;padding:10px 13px;font-size:13px;color:#222;line-height:1.5;max-width:90%;margin-bottom:8px}
 .s0-time{font-size:10px;color:#bbb;margin-bottom:8px}
 .s0-rows{background:#fff;border:1px solid #eee;border-radius:8px;overflow:hidden}
@@ -218,7 +231,7 @@ blockquote cite{font-size:11px;color:var(--dim);font-family:'JetBrains Mono',mon
 .s0-stat{font-size:13.5px;color:#333;line-height:1.6;margin-top:12px}
 .s0-stat strong{color:#000}
 
-/* Screen 1 */
+/* Screen 1 – Health Score */
 .s1-hero{background:linear-gradient(135deg,#0a0a14,#16162a);border-radius:14px;padding:16px;margin:8px 0 12px;position:relative;overflow:hidden}
 .s1-hero::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:radial-gradient(circle,rgba(201,168,76,.25),transparent 65%)}
 .s1-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;color:#888;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
@@ -232,27 +245,27 @@ blockquote cite{font-size:11px;color:var(--dim);font-family:'JetBrains Mono',mon
 .s1-range{display:flex;justify-content:space-between;font-size:9px;color:#888;font-family:'JetBrains Mono',monospace}
 .s1-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
 .s1-tile{background:#f9f9f9;border:1px solid #eee;border-radius:10px;padding:10px;text-align:center}
-.s1-tile-l{font-size:10px;color:#999;margin-bottom:3px}
-.s1-tile-v{font-size:14px;font-weight:700}
+.s1-tl{font-size:10px;color:#999;margin-bottom:3px}
+.s1-tv{font-size:14px;font-weight:700}
 .tvg{color:#2a8a4a}.tvgold{color:#7a5000}
 .s1-bd{background:#f5f5f5;border-radius:12px;padding:12px}
-.s1-bd-h{font-family:'JetBrains Mono',monospace;font-size:9px;color:#999;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
-.s1-bd-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
-.s1-bd-lbl{font-size:12px;color:#555}
-.s1-bd-val{font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:100px}
+.s1-bdh{font-family:'JetBrains Mono',monospace;font-size:9px;color:#999;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.s1-bdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.s1-bdl{font-size:12px;color:#555}
+.s1-bdv{font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:100px}
 .bv-ex{background:#e0f5e0;color:#2a7a2a}.bv-gd{background:#fff0d0;color:#8a6000}
 .s1-bbar{height:3px;background:#ddd;border-radius:100px;overflow:hidden;margin-bottom:8px}
 .s1-bfill{height:100%;border-radius:100px;background:#c9a84c}
 .s1-note{background:#fff8e0;border:1px solid #e5c850;border-radius:8px;padding:9px 12px;font-size:11px;color:#7a5800;margin-top:10px;line-height:1.5}
 
-/* Screen 2 */
+/* Screen 2 – Weekly Nudge */
 .s2-chip{background:#0a0a14;border-radius:12px;padding:12px 14px;margin:8px 0 10px;display:flex;align-items:center;justify-content:space-between}
 .s2-cl{display:flex;align-items:baseline;gap:8px}
 .s2-cn{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#c9a84c}
 .s2-cl2{font-size:11px;color:#888}
 .s2-cr{font-size:12px;color:#4ec47a;font-weight:600}
 .s2-badge{display:inline-block;background:#fff8e0;border:1px solid #e5c850;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#8a6000;letter-spacing:.07em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px}
-.s2-ncard{background:#fff8e0;border:1px solid #e5c850;border-radius:14px;padding:13px;margin-bottom:10px}
+.s2-nc{background:#fff8e0;border:1px solid #e5c850;border-radius:14px;padding:13px;margin-bottom:10px}
 .s2-nt{display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .s2-ni{font-size:17px}
 .s2-nl{font-family:'JetBrains Mono',monospace;font-size:9px;color:#8a6000;text-transform:uppercase;letter-spacing:.07em}
@@ -264,7 +277,7 @@ blockquote cite{font-size:11px;color:var(--dim);font-family:'JetBrains Mono',mon
 .s2-abtn{background:#c9a84c;color:#000;font-size:11px;font-weight:700;padding:7px 14px;border-radius:100px;display:inline-block}
 .s2-rule{text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:#bbb;letter-spacing:.05em;margin-top:6px;padding-top:8px;border-top:1px solid #eee}
 
-/* Screen 3 */
+/* Screen 3 – Streak */
 .s3-ms{background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.35);border-radius:16px;padding:18px;text-align:center;margin:8px 0 12px}
 .s3-mi{font-size:32px;margin-bottom:5px}
 .s3-mt{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#7a5000;margin-bottom:3px}
@@ -285,7 +298,7 @@ blockquote cite{font-size:11px;color:var(--dim);font-family:'JetBrains Mono',mon
 .s3-tl{font-size:10px;color:#999;margin-bottom:3px}
 .s3-tv{font-size:14px;font-weight:700}
 
-/* Screen 4 */
+/* Screen 4 – Trajectory */
 .s4-mc{background:linear-gradient(135deg,#0a0a14,#16162a);border-radius:14px;padding:13px 15px;margin:8px 0 12px;display:flex;justify-content:space-between;align-items:center}
 .s4-ml{font-family:'JetBrains Mono',monospace;font-size:9px;color:#888;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
 .s4-mn{font-family:'Playfair Display',serif;font-size:30px;font-weight:800;color:#c9a84c;line-height:1}
@@ -306,7 +319,7 @@ blockquote cite{font-size:11px;color:var(--dim);font-family:'JetBrains Mono',mon
 .s4-ach{font-size:11px;font-weight:600;color:#555;margin-bottom:4px}
 .s4-acb{font-size:12px;color:#666;line-height:1.5}
 
-/* Screen 5 */
+/* Screen 5 – Gateway */
 .s5-top{background:#0a0a14;border-radius:12px;padding:12px 14px;margin:8px 0 10px;display:flex;justify-content:space-between;align-items:center}
 .s5-tl{display:flex;align-items:baseline;gap:6px}
 .s5-tn{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#c9a84c}
@@ -326,7 +339,6 @@ blockquote cite{font-size:11px;color:var(--dim);font-family:'JetBrains Mono',mon
 .s5-it span{font-size:11px;color:#666;line-height:1.4}
 .s5-note{text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:#ccc;letter-spacing:.05em;margin-top:4px}
 
-/* Nav dots */
 .pm-nav{padding:10px 20px 18px;display:flex;align-items:center;justify-content:center;gap:10px;flex-shrink:0}
 .pm-arrow{width:40px;height:40px;border-radius:50%;background:#2a2a3c;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:16px;transition:all .2s;flex-shrink:0}
 .pm-arrow:hover{background:#3a3a50;color:#fff}
@@ -352,7 +364,7 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
   h1{font-size:34px}
   .meta-strip{flex-wrap:wrap}
   .wrap{padding:0 20px 100px}
-  .tldr-g,.cmp,.trust-g,.mts,.beh-row,.p-cols{grid-template-columns:1fr}
+  .tldr-g,.cmp,.trust-g,.mts,.beh-row,.p-cols,.fy-table{grid-template-columns:1fr 1fr}
   .stat-row{grid-template-columns:1fr 1fr}
   .val-hd,.val-rw{grid-template-columns:28px 1fr}
   .val-hd>*:nth-child(3),.val-hd>*:nth-child(4),
@@ -375,13 +387,13 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
 <section class="hero fi">
   <div class="hero-eye"><span class="hero-lbl">Product Case Study · CRED · May 2026</span></div>
   <h1>From Bill Payments to<br><em>Financial Behavior:</em><br>Reimagining Engagement at CRED</h1>
-  <p class="hero-sub">CRED improved monetization significantly through FY25 — revenue grew, operating losses narrowed, and multi-product adoption deepened across the ecosystem. But the core engagement loop still remains largely transactional and event-driven, limiting recurring habit formation and reducing opportunities for deeper ecosystem engagement. This case study explores a behavioural product layer designed to address that gap.</p>
+  <p class="hero-sub">Revenue grew 16% to ₹2,735 Cr in FY25. Operating losses fell 51%. Multi-product adoption hit 45%. But the core behavior loop is still monthly — and that's the gap this case study addresses.</p>
   <div class="meta-strip">
     <div class="mc"><div class="mc-l">Author</div><div class="mc-v">Chakri Sama</div></div>
     <div class="mc"><div class="mc-l">Company</div><div class="mc-v">CRED · Dreamplug Technologies</div></div>
     <div class="mc"><div class="mc-l">Problem</div><div class="mc-v">Engagement · Habit Formation</div></div>
-    <div class="mc"><div class="mc-l">Solution</div><div class="mc-v">Behavioral Product Feature</div></div>
-    <div class="mc"><div class="mc-l">Basis</div><div class="mc-v">Verified public sources</div></div>
+    <div class="mc"><div class="mc-l">Data basis</div><div class="mc-v">FY25 verified sources</div></div>
+    <div class="mc"><div class="mc-l">Type</div><div class="mc-v">Speculative Research</div></div>
     <div class="mc"><div class="mc-l">Date</div><div class="mc-v">May 2026</div></div>
   </div>
 </section>
@@ -391,87 +403,126 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
 <div class="tldr fi">
   <div class="tldr-h">⚡ TL;DR — The complete picture in 45 seconds</div>
   <div class="tldr-g">
-    <div class="tc"><div class="tc-i">🧩</div><div class="tc-l">The Real Problem</div><p>CRED's core behavior loop is transactional and monthly. Despite 6+ product verticals, usage appears concentrated around bill payment cycles. Low frequency limits multi-product adoption and weakens the ecosystem flywheel.</p></div>
-    <div class="tc"><div class="tc-i">🎯</div><div class="tc-l">The Solution</div><p>A <strong>CRED Health Score</strong> — a weekly proprietary behavioral score that turns credit data into a recurring financial wellness habit. A financial identity companion that creates a new weekly reason to return.</p></div>
-    <div class="tc"><div class="tc-i">📈</div><div class="tc-l">Expected Impact</div><p>Target: shift WAU/MAU from monthly-spike toward weekly engagement. Deepen multi-product adoption from the published 45% active-member baseline. Deepen the financial identity CRED's premium brand is built on.</p></div>
+    <div class="tc"><div class="tc-i">🧩</div><div class="tc-l">The Real Problem</div><p>CRED's core behavior loop is transactional and monthly. Despite 45% multi-product adoption (FY25) and 14.4 transactions/user/month, most opens are concentrated around bill payment cycles. The behavioral habit hasn't formed yet.</p></div>
+    <div class="tc"><div class="tc-i">🎯</div><div class="tc-l">The Solution</div><p>A <strong>CRED Health Score</strong> — a weekly proprietary behavioral score that creates a recurring financial wellness habit. Not another CIBIL display. A financial identity companion with a new weekly reason to return.</p></div>
+    <div class="tc"><div class="tc-i">📈</div><div class="tc-l">Expected Impact</div><p>Target: shift WAU/MAU from monthly-spike toward consistent weekly engagement. Grow multi-product adoption from the FY25 baseline of 45%. Deepen financial identity for CRED's 15M+ members.</p></div>
   </div>
 </div>
 
+<!-- 01 ABOUT -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">01</span><div class="sl-r"></div><span class="sl-t">Company Background</span></div>
-  <h2>About CRED</h2>
-  <p>Founded in 2018 by Kunal Shah, CRED is a Bengaluru-based fintech platform built around India's most creditworthy users — 750+ CIBIL. What began as a credit card bill payment reward app evolved into a multi-vertical platform spanning payments, wealth management, insurance, vehicle services, travel, and e-commerce.</p>
-  <p>CRED's thesis: <strong>India's top 10% of households drive 60% of consumption.</strong> Building the most trusted financial platform for that segment is a durable, high-ARPU business. The financial numbers confirm this. The engagement depth does not — yet.</p>
+  <h2>About CRED — FY25 State of the Business</h2>
+  <p>Founded in 2018 by Kunal Shah, CRED (Dreamplug Technologies) is a Bengaluru-based fintech platform built around India's most creditworthy users — 750+ CIBIL. What began as a credit card bill payment reward app has evolved into a multi-vertical platform covering payments, wealth management (Kuvera), lending (CRED Cash+), insurance (CRED Garage), vehicle services, and travel.</p>
+  <p>As of November 2025, <strong>over 15 million members use CRED each month</strong> <span class="src-badge">OpenAI case study, Nov 2025</span> — a platform serving what it calls India's most affluent and financially responsible consumers. More than half of all new credit cards issued in India go to CRED members. <span class="src-badge">YourStory, Jan 2026</span></p>
+
   <div class="stat-row">
-    <div class="sc"><span class="sc-n">13M+</span><span class="sc-l">Monthly Active Users<br>(FY25 public reporting)</span></div>
-    <div class="sc"><span class="sc-n">₹2,735Cr</span><span class="sc-l">Revenue FY25<br>+16% YoY</span></div>
-    <div class="sc"><span class="sc-n">35%+</span><span class="sc-l">Active members using 3+ products<br></span></div>
-    <div class="sc"><span class="sc-n">₹298Cr</span><span class="sc-l">Operating loss FY25<br>Down 51% YoY</span></div>
+    <div class="sc"><span class="sc-n">₹2,735Cr</span><span class="sc-l">Operating Revenue FY25</span><span class="sc-src">+16% YoY · CRED press release Jan 2026</span></div>
+    <div class="sc"><span class="sc-n">15M+</span><span class="sc-l">Monthly members (total)</span><span class="sc-src">OpenAI case study Nov 2025 · YourStory Jan 2026</span></div>
+    <div class="sc"><span class="sc-n">45%</span><span class="sc-l">Members using 3+ products</span><span class="sc-src">Up from 35% in FY24 · FY25 press release</span></div>
+    <div class="sc"><span class="sc-n">₹2,000</span><span class="sc-l">ARPU — highest in India payments</span><span class="sc-src">CRED FY25 press release · Jan 2026</span></div>
   </div>
+
+  <h3>Revenue & Loss Trajectory — FY22 to FY25</h3>
+  <div class="fy-table">
+    <div class="fy-cell"><div class="fy-year">FY22</div><div class="fy-val">₹393Cr</div><div class="fy-delta fd-up">Revenue</div></div>
+    <div class="fy-cell"><div class="fy-year">FY23</div><div class="fy-val">₹1,484Cr</div><div class="fy-delta fd-up">+277% YoY</div></div>
+    <div class="fy-cell"><div class="fy-year">FY24</div><div class="fy-val">₹2,473Cr</div><div class="fy-delta fd-up">+66% YoY</div></div>
+    <div class="fy-cell"><div class="fy-year">FY25</div><div class="fy-val">₹2,735Cr</div><div class="fy-delta fd-up">+16% YoY</div></div>
+  </div>
+
   <div class="tw">
     <table>
-      <thead><tr><th>Data Point</th><th>Value</th><th>Source</th></tr></thead>
+      <thead><tr><th>Metric</th><th>FY25 Value</th><th>Change vs FY24</th><th>Source</th></tr></thead>
       <tbody>
-        <tr><td>Total funding</td><td>$942M+ · Latest: Series G $75M, May 2025 (GIC + QED)</td><td>Crunchbase / CanvasBusinessModel.com</td></tr>
-        <tr><td>Valuation</td><td>~$3.5B (reset from $6.4B peak 2022)</td><td>Series G press release, May 2025</td></tr>
-        <tr><td>MTU</td><td>12.6M in FY25 — +14.5% YoY Transaction frequency +34% YoY</td><td>Inc42, citing Fitch report, Mar 2025</td></tr>
-        <tr><td>UPI share</td><td>0.75% of UPI volume — 2.24% of total UPI value</td><td>Inc42, Sep 2025</td></tr>
-        <tr><td>Bill payment share</td><td>~20% of India's total credit card bill payments</td><td>IIDE Case Study, 2026</td></tr>
-        <tr><td>Svalbard (Feb 2025)</td><td>Foresight (ML credit prediction) · Compass (score roadmap) · Aurora (score visualization)</td><td>YourStory / AIM / The Week, Feb 2025</td></tr>
-        <tr><td>Design system</td><td>NeoPOP — dark-first (#1a1b1d), bold typography, physical UI. Open-sourced.</td><td>cred.club/design, May 2026</td></tr>
+        <tr><td>Operating revenue</td><td>₹2,735 crore</td><td>+16% YoY</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>Operating losses</td><td>₹298 crore</td><td>-51% YoY (from ₹609 Cr FY24)</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>Gross margins</td><td>~70%</td><td>Improving</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>Total losses (incl. ESOPs/depreciation)</td><td>₹1,457 crore</td><td>-11.5% YoY</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>Monthly transacting users (MTU)</td><td>12.6 million (1.26 crore)</td><td>+14.5% YoY</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>Transaction frequency</td><td>14.4 transactions/user/month</td><td>+34% YoY</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>Total payment value (TPV)</td><td>₹8.5 lakh crore</td><td>+23% YoY</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>Multi-product adoption</td><td>45% of active members use 3+ products</td><td>Up from 35% in FY24</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>ARPU</td><td>~₹2,000</td><td>Highest in India payments ecosystem</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>Lending AUM</td><td>₹22,000 crore</td><td>Top 3 revenue contributor</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>Total members</td><td>15 million+</td><td>Up from 13M MAU (Jun 2024)</td><td>OpenAI case study Nov 2025; YourStory Jan 2026</td></tr>
+        <tr><td>Cash reserves</td><td>~₹1,000 crore</td><td>Low burn rate maintained</td><td>NewsBytesApp, Jan 2026</td></tr>
+        <tr><td>Valuation</td><td>$3.64 billion (Series G, May 2025)</td><td>Down from $6.4B peak (2022)</td><td>Entrackr; BW Disrupt, Jan 2026</td></tr>
+        <tr><td>UPI volume share (Dec 2025)</td><td>157M transactions · ~0.73% volume share</td><td>~2.24% value share (premium users)</td><td>AngelOne citing NPCI, Jan 2026</td></tr>
+        <tr><td>India credit cards in circulation</td><td>113 million+ active cards (Q3 2025)</td><td>+8% YoY (RBI data)</td><td>SaveSage citing RBI, 2025</td></tr>
+        <tr><td>Profitability target</td><td>Full profitability in FY26</td><td>Targeting EBITDA breakeven</td><td>CRED press release, Jan 2026</td></tr>
+        <tr><td>Svalbard (credit suite)</td><td>Foresight + Compass + Aurora launched Feb 2025</td><td>ML credit prediction, roadmap, visualization</td><td>YourStory / AIM / The Week, Feb 2025</td></tr>
       </tbody>
     </table>
   </div>
+
+  <div class="co co-ins">
+    <div class="co-ic">📊</div>
+    <div class="co-b">
+      <h4>The FY25 picture in one paragraph</h4>
+      <p>CRED is a business firing on multiple cylinders financially — revenue growing, losses shrinking fast, transaction frequency up 34%, multi-product adoption at 45%, and targeting full profitability in FY26. The engagement story has also improved: 14.4 transactions per user per month is meaningful. But transaction frequency alone doesn't equal behavioral habit. <strong>The question this case study asks is: why does CRED still lack a weekly reason for users to open the app outside of payment events?</strong></p>
+    </div>
+  </div>
 </div>
 
+<!-- 02 PROBLEM -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">02</span><div class="sl-r"></div><span class="sl-t">Problem Definition</span></div>
-  <h2>A Monthly Habit in a Weekly World</h2>
+  <h2>The Engagement Gap — Strong Metrics, Shallow Habit</h2>
+
   <div class="co co-prob">
     <div class="co-ic">⚠️</div>
     <div class="co-b">
       <h4>The precise problem statement</h4>
-      <p>CRED's core behavior loop is transactional and monthly — limiting habit formation and reducing opportunities for deeper ecosystem adoption. Despite strong brand recall and rapid product expansion, user engagement growth appeared slower relative to CRED's brand momentum. Usage appears heavily concentrated around monthly bill payment cycles.</p>
+      <p>CRED's core behavior loop is transactional in nature — app opens are disproportionately driven by bill payment cycles and transactional events, not by an intrinsic daily or weekly financial identity habit. Despite 14.4 transactions/user/month (FY25), these are primarily payment-triggered, not habit-driven. The 55% of members who still use only 1–2 products represent the clearest signal of the engagement depth gap.</p>
     </div>
   </div>
+
+  <p>This is not a claim that CRED is underperforming. The FY25 numbers are strong. But there is a structural difference between <em>transaction frequency</em> (users completing payment tasks when they need to) and <em>behavioral habit</em> (users opening the app because CRED is woven into their weekly financial identity). CRED has the former. It hasn't fully unlocked the latter.</p>
+
   <div class="tw">
     <table>
       <thead><tr><th>Observation</th><th>Signal</th><th>Source</th></tr></thead>
       <tbody>
-        <tr><td>13M MAU unchanged across a 16–18 month window</td><td>User growth flat despite high-visibility campaigns and 6+ product launches</td><td>SiliconIndia, Jun 2024; Wikipedia</td></tr>
-        <tr><td>MTU grew 34% YoY, MAU did not visibly move</td><td>Existing users transacted more — new acquisition lagged</td><td>CRED FY24 press release; Entrackr</td></tr>
-        <tr><td>~45% of active members use 3+ products</td><td>A large share of members still remain concentrated in core payment behavior despite CRED expanding into multiple verticals</td><td>CRED FY24 press release</td></tr>
-        <tr><td>UPI volume near-flat Aug 2024–Aug 2025 (+1.71% count)</td><td>Premium-value use, not frequency growth</td><td>Inc42, Sep 2025</td></tr>
-        <tr><td>CRED reverted to 750+ CIBIL filter after testing lower threshold</td><td>Lower-CIBIL users "weren't generating transactions." ICP is correct.</td><td>SiliconIndia, Jun 2024</td></tr>
+        <tr><td>13M MAU reported across a 16–18 month window (late 2022 – early 2024)</td><td>User growth appeared flat despite major ad campaigns and 6+ product launches. Now 15M+ total members — showing eventual improvement.</td><td>SiliconIndia Jun 2024; Wikipedia; YourStory Jan 2026</td></tr>
+        <tr><td>MTU is 12.6M, but total members are 15M+</td><td>Gap of ~2.4M+ members who are registered but not transacting monthly — a latent engagement opportunity</td><td>CRED FY25 press release; OpenAI case study Nov 2025</td></tr>
+        <tr><td>55% of active members still use only 1–2 products</td><td>Despite 45% now at 3+ products (FY25, up from 35% FY24), more than half remain concentrated in bill payment / minimal product use</td><td>CRED FY25 press release (implied from 45% at 3+ products)</td></tr>
+        <tr><td>14.4 transactions/user/month (+34% YoY) is strong — but driven by payment types</td><td>Utility bill payments, UPI, card payments are all transactional triggers. Not identity-forming. Users open when they need to pay — not because CRED gives them a reason to check in.</td><td>CRED FY25 press release, Jan 2026</td></tr>
+        <tr><td>UPI volume share 0.73% (Dec 2025) vs. 2.24% value share</td><td>CRED's users are high-value but low-frequency vs. PhonePe/GPay. Premium use case, not daily habit. CRED is not a daily payments app — and shouldn't try to be.</td><td>AngelOne citing NPCI, Jan 2026</td></tr>
+        <tr><td>CRED reverted to 750+ CIBIL filter after testing lower threshold (2023)</td><td>Lower-CIBIL users "weren't generating transactions or buying products." ICP confirmed correct — engagement model needs improving, not the audience.</td><td>SiliconIndia, Jun 2024</td></tr>
       </tbody>
     </table>
   </div>
+
   <div class="co co-ins">
     <div class="co-ic">💡</div>
     <div class="co-b">
-      <h4>The core insight</h4>
-      <p><strong>The principle: turn bill payment into financial identity. Rewards drive short-term transactions. Identity creates recurring engagement.</strong> CRED's brand tells its users they belong to an exclusive, financially responsible class — but the product doesn't reflect that identity back with the frequency identity-based platforms require.</p>
+      <h4>The core insight — the sharpest framing in this case</h4>
+      <p><strong>The principle: turn bill payment into financial identity. Rewards drive short-term transactions. Identity creates recurring engagement.</strong> CRED's FY25 numbers show a business improving fast at monetisation. The next frontier is behavioral: making CRED the app users open every Monday to check how their financial week went — not just on the 5th of every month to pay their bill. That requires a new product primitive: a recurring financial wellness layer that creates a weekly identity check-in.</p>
     </div>
   </div>
 </div>
 
+<!-- 03 SVALBARD -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">03</span><div class="sl-r"></div><span class="sl-t">What CRED Already Built</span></div>
-  <h2>Svalbard (Feb 2025) — and Why the Gap Remains</h2>
+  <h2>Svalbard (Feb 2025) — Real Progress, Remaining Gap</h2>
+
   <div class="co co-ins">
     <div class="co-ic">🔍</div>
     <div class="co-b">
       <h4>Verified: CRED Svalbard, launched Feb 26, 2025</h4>
-      <p><strong>Foresight</strong> — ML-powered prediction of how actions impact credit score. <strong>Compass</strong> — personalized roadmap to reach a target score. <strong>Aurora</strong> — dynamic score history visualization. Kunal Shah: "Credit should not be a source of anxiety." CRED cited 79% of creditworthy Indians find credit stressful.</p>
+      <p>Three components: <strong>Foresight</strong> — ML-powered prediction of how specific actions (taking a loan, missing a payment) impact credit score. <strong>Compass</strong> — personalized roadmap to reach a target score with time predictions. <strong>Aurora</strong> — dynamic credit score history visualization with custom typeface and "Halo" visual. Kunal Shah's stated goal: "Credit should not be a source of anxiety." CRED cited that 79% of creditworthy Indians find credit stressful, and 54% would invest more if they had better credit confidence. <span class="src-badge">YourStory / AIM / The Week, Feb 2025</span></p>
     </div>
   </div>
+
   <div class="cmp">
     <div class="cg cg-b">
       <div class="cg-lbl">What Svalbard solves</div>
       <ul class="cgl">
-        <li>"What if I take a loan — how does my score change?"</li>
+        <li>"What if I take a loan — how does my score change?" (Foresight)</li>
         <li>"How do I reach 800 from 760?" (Compass)</li>
-        <li>Credit anxiety and episodic decision-making</li>
+        <li>Credit anxiety and episodic credit event decisions</li>
         <li>Score history visualization (Aurora)</li>
       </ul>
     </div>
@@ -479,15 +530,16 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
       <div class="cg-lbl">What still isn't solved</div>
       <ul class="cgl">
         <li>A weekly reason to open when score is already stable</li>
-        <li>Behavioral identity for non-stressed users</li>
-        <li>Recurring engagement for the 65% using 1–2 products</li>
-        <li>Financial narrative deepening cross-product adoption</li>
+        <li>Behavioral identity reinforcement for non-stressed users</li>
+        <li>Recurring engagement for the 55% using only 1–2 products</li>
+        <li>A financial narrative that deepens cross-product adoption</li>
       </ul>
     </div>
   </div>
-  <p>The CRED Health Score addresses a <strong>different user state</strong> — the financially healthy member who has nothing to "fix" but needs a recurring, meaningful weekly reason to engage. Svalbard and Health Score are complementary, not competing.</p>
+  <p>Svalbard addresses episodic credit management. The CRED Health Score addresses a <strong>different user state</strong> — the financially healthy member (80%+ of CRED's base) who has nothing to "fix" but needs a recurring, meaningful reason to engage weekly. Complementary, not competing.</p>
 </div>
 
+<!-- 04 PERSONA -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">04</span><div class="sl-r"></div><span class="sl-t">User Context</span></div>
   <h2>Who This Problem Belongs To</h2>
@@ -496,38 +548,41 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
       <div class="p-av">👨‍💼</div>
       <div>
         <div class="p-nm">Arjun — 29, Senior Product Manager, Bengaluru</div>
-        <div class="p-rl">CRED member since 2021 · 2 credit cards · CIBIL 812 · Monthly income ₹1.4L</div>
+        <div class="p-rl">CRED member since 2021 · 2 credit cards · CIBIL 812 · Monthly income ₹1.4L · Part of the 55% using 1–2 products only</div>
       </div>
     </div>
     <div class="p-cols">
       <div>
-        <div class="pc-h">Current behavior</div>
+        <div class="pc-h">Current behavior with CRED</div>
         <ul class="pcl">
-          <li>Opens CRED around bill due dates — once a month</li>
-          <li>Pays SBI and HDFC bills in under 2 minutes. Exits.</li>
+          <li>Opens CRED around bill due dates — driven by payment need, not habit</li>
+          <li>Pays SBI and HDFC bills in under 2 minutes, then exits</li>
           <li>Checks credit score on BankBazaar — not CRED</li>
-          <li>Saw Svalbard notification. Opened once. Didn't return — "nothing to fix."</li>
-          <li>Doesn't know CRED has a wealth product (Kuvera)</li>
+          <li>Saw Svalbard notification, opened once — "nothing to fix, score is 812"</li>
+          <li>Doesn't know CRED now has Kuvera (wealth) or CRED Cash+ (lending)</li>
+          <li>Uses CRED Pay occasionally when cashback is active, otherwise GPay</li>
         </ul>
       </div>
       <div>
-        <div class="pc-h">What he actually needs</div>
+        <div class="pc-h">What he actually wants</div>
         <ul class="pcl">
-          <li>A weekly summary: how did my financial week go?</li>
-          <li>Visible progress — is my discipline improving?</li>
-          <li>Contextualised insights from his own data</li>
-          <li>CRED to reflect his financial identity back with pride</li>
-          <li>A platform that understands him — not just his bill</li>
+          <li>A weekly snapshot: how did my financial week look?</li>
+          <li>Visible progress — is my financial discipline improving?</li>
+          <li>His own data contextualised, not generic advice</li>
+          <li>CRED to reflect his financial identity back to him with pride</li>
+          <li>A reason to open CRED that isn't tied to a payment deadline</li>
         </ul>
       </div>
     </div>
   </div>
   <blockquote>
-    <p>"I pay my bills on CRED because the interface is nicer. But I think of it as a glorified bill payment app. There's no reason to open it otherwise."</p>
+    <p>"I pay my bills on CRED because the interface is nicer. But I think of it as a glorified bill payment app with better aesthetics. There's no reason to open it otherwise."</p>
     <cite>— Composite from verified App Store reviews and public CRED product teardowns, 2024–2025</cite>
   </blockquote>
+  <p>Arjun represents the <strong>55% of CRED's active base</strong> still using only 1–2 products despite FY25 progress. Converting this cohort to 3+ product users is the single most important lever for CRED's path to FY26 profitability.</p>
 </div>
 
+<!-- 05 SOLUTION -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">05</span><div class="sl-r"></div><span class="sl-t">Product Solution</span></div>
   <h2>The Solution — CRED Health Score</h2>
@@ -536,16 +591,17 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
     <div class="co-ic">✅</div>
     <div class="co-b">
       <h4>The Principle: Turn bill payment into financial identity</h4>
-      <p>This feature deepens engagement within CRED's premium user base while creating stronger pathways into adjacent financial behaviors. Instead of expanding horizontally, this strengthens engagement within CRED's existing financial identity ecosystem. The goal is deeper financial habit formation — not just higher engagement numbers.</p>
+      <p>This feature deepens engagement within CRED's 15M+ premium user base while creating stronger pathways into CRED's FY25-launched ecosystem — CRED Money, Kuvera, CRED Cash+, CRED Store. Instead of expanding horizontally, it strengthens engagement within the financial identity ecosystem CRED has already built. The goal is deeper financial habit formation — the behavioral layer beneath the transaction layer.</p>
     </div>
   </div>
+
   <h3>5 Feature Components</h3>
   <div class="steps">
-    <div class="step"><div class="s-n">1</div><div class="s-b"><h4>Credit Health Score (0–900)</h4><p>CRED-proprietary score synthesizing CIBIL data, payment history, utilization, and behavioral signals. Updates weekly, on home screen. <strong>Every score change includes a transparent, plain-English explanation — no black-box behavior.</strong> Users always know which action drove which change.</p></div></div>
-    <div class="step"><div class="s-n">2</div><div class="s-b"><h4>Weekly Financial Nudge — One High-Signal Insight</h4><p>Strict constraint: <strong>one actionable insight per week.</strong> "Your HDFC utilization is at 71% — keeping it under 30% strengthens your score." Not push spam — a single high-quality in-app card. No fear-based messaging. One actionable signal only.</p></div></div>
-    <div class="step"><div class="s-n">3</div><div class="s-b"><h4>Score Streak & Milestones</h4><p>A running streak of consistent financial behavior — "14-week improvement streak 🔥." Same psychology as Duolingo streaks and Apple Fitness rings. Milestone rewards are premium — CRED Escapes early access, not generic cashback.</p></div></div>
-    <div class="step"><div class="s-n">4</div><div class="s-b"><h4>Score Trajectory Feed — 12-Week View</h4><p>Visual 12-week chart of credit health trend with contextual annotations: "Score dipped in Week 9 — linked to high SBI utilization." Makes financial improvement visual and satisfying — like a fitness graph. Progress visibility is the strongest retention anchor in behavioral products.</p></div></div>
-    <div class="step"><div class="s-n">5</div><div class="s-b"><h4>Cross-Product Gateway — Contextual, Not Interruptive</h4><p>Relevant financial products introduced based on behavioral signals — not push ads. Consistent high-score trajectory → Kuvera surfaced as investable surplus signal. The recommendation emerges from data; it doesn't interrupt it. Label: "Based on your behavior · Not ads."</p></div></div>
+    <div class="step"><div class="s-n">1</div><div class="s-b"><h4>Credit Health Score (0–900)</h4><p>CRED-proprietary score synthesizing CIBIL data, payment history, utilization, and behavioral signals. Updates weekly, on home screen. <strong>Every score change includes a transparent, plain-English explanation — no black-box behavior.</strong> Positioned as CRED's behavioral lens, not a CIBIL replacement. Users always know which action drove which change.</p></div></div>
+    <div class="step"><div class="s-n">2</div><div class="s-b"><h4>Weekly Financial Nudge — One High-Signal Insight</h4><p>Strict constraint: <strong>one actionable insight per week.</strong> "Your HDFC utilization is at 71% — keeping it under 30% strengthens your score." Not push spam — a single high-quality in-app card on home screen. No fear-based messaging. Only actionable signals drawn from data CRED already processes for its 14.4 transactions/user/month.</p></div></div>
+    <div class="step"><div class="s-n">3</div><div class="s-b"><h4>Score Streak & Milestones</h4><p>A running streak of consistent financial behavior — "14-week improvement streak 🔥." Same psychology as Duolingo streaks and Apple Fitness rings. Milestone rewards must be premium and meaningful — CRED Escapes early access, exclusive Kuvera features, not generic cashback. The achievement must feel worthy of CRED's brand.</p></div></div>
+    <div class="step"><div class="s-n">4</div><div class="s-b"><h4>Score Trajectory Feed — 12-Week View</h4><p>Visual 12-week chart of credit health trend with contextual annotations: "Score dipped in Week 9 — linked to high SBI utilization." Makes financial improvement visual, trackable, and satisfying — like a fitness graph. Progress visibility is the strongest retention anchor in behavioral products.</p></div></div>
+    <div class="step"><div class="s-n">5</div><div class="s-b"><h4>Cross-Product Gateway — Contextual, Not Interruptive</h4><p>Relevant financial products introduced based on behavioral signals — not push ads. Consistent high-score trajectory → Kuvera (already acquired by CRED in 2024) surfaced as investable surplus signal. High utilization pattern → CRED Cash+ offered at the natural moment. Label always: "Based on your behavior · Not ads." Drives 45% → 55%+ multi-product adoption.</p></div></div>
   </div>
 
   <div class="proto-section">
@@ -553,57 +609,59 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
     <div class="proto-title">CRED Health Score — 6-Screen Clickable Demo</div>
     <p class="proto-sub">Click through all 6 screens — experience the full feature flow</p>
     <div class="proto-trail">Problem → Health Score → Weekly Nudge → Streak → Trajectory → Cross-Product Gateway</div>
-    <button class="proto-btn" onclick="openProto()">
-      Open Prototype &nbsp;→
-    </button>
+    <button class="proto-btn" onclick="openProto()">Open Prototype &nbsp;→</button>
   </div>
 </div>
 
+<!-- 06 TRUST -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">06</span><div class="sl-r"></div><span class="sl-t">Trust Layer</span></div>
   <h2>Why Users Would Trust It</h2>
-  <p>Any financial insight feature must answer: <em>"Why should I trust what CRED tells me about my behavior?"</em> Unexplained financial intelligence creates anxiety. Explained intelligence creates empowerment.</p>
+  <p>Any financial insight feature must answer: <em>"Why should I trust what CRED tells me about my behavior?"</em> CRED's own data shows 79% of creditworthy Indians find credit stressful <span class="src-badge">CRED/YourStory, Feb 2025</span>. A feature that adds to that stress will be turned off. Trust must be built into the design from Day 1.</p>
   <div class="trust-g">
-    <div class="trst"><div class="trst-i">🔍</div><div class="trst-t">Transparent Score Attribution</div><div class="trst-d">Every movement explained: "Score moved +8 — payment was 5 days early and HDFC utilization dropped below 30%." No black-box. Every change traceable to a specific behavior.</div></div>
-    <div class="trst"><div class="trst-i">📋</div><div class="trst-t">Data Source Clarity</div><div class="trst-d">CRED communicates what data powers each insight: credit card transactions, CIBIL integration, payment timing. No inferred third-party data beyond what CRED already processes.</div></div>
-    <div class="trst"><div class="trst-i">🎛️</div><div class="trst-t">User-Controlled Frequency</div><div class="trst-d">Weekly by default. Users can choose monthly or pause. Declining scores are framed as actionable guidance — never as judgment.</div></div>
-    <div class="trst"><div class="trst-i">🏷️</div><div class="trst-t">Not a CIBIL Replacement</div><div class="trst-d">Explicitly CRED's behavioral lens on the user's own data — not a competing credit score. CIBIL is the official record. Health Score is the behavioral progress indicator.</div></div>
+    <div class="trst"><div class="trst-i">🔍</div><div class="trst-t">Transparent Score Attribution</div><div class="trst-d">Every movement explained: "Score moved +8 — payment was 5 days early and HDFC utilization dropped below 30%." No black-box. Every change traceable to a specific user behavior — not a model output.</div></div>
+    <div class="trst"><div class="trst-i">📋</div><div class="trst-t">Data Source Clarity</div><div class="trst-d">CRED communicates exactly what data powers each insight: credit card transactions (₹8.5 lakh crore processed in FY25), CIBIL integration, payment timing. No third-party inferred data beyond what CRED already processes for payments.</div></div>
+    <div class="trst"><div class="trst-i">🎛️</div><div class="trst-t">User-Controlled Frequency</div><div class="trst-d">Weekly by default. Users can choose monthly or pause. Score-decline weeks are framed as actionable guidance, never as judgment. Information always in service of the user's goals.</div></div>
+    <div class="trst"><div class="trst-i">🏷️</div><div class="trst-t">Not a CIBIL Replacement</div><div class="trst-d">Explicitly CRED's behavioral lens — not a competing credit score. CIBIL is the official record. Health Score is the behavioral progress indicator — more granular, more frequent, more understandable. Complements Svalbard (Foresight/Compass), which handles credit event decisions.</div></div>
   </div>
 </div>
 
+<!-- 07 BEHAVIOURAL -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">07</span><div class="sl-r"></div><span class="sl-t">Behavioral Design</span></div>
   <h2>Progress, Not Punishment</h2>
-  <p>The Health Score is built around <strong>behavioral reinforcement, not financial anxiety.</strong> CRED's own data shows 79% of creditworthy Indians find credit stressful. A feature that adds to that stress will be turned off. A feature built around momentum and pride will be kept on.</p>
+  <p>The Health Score is designed around <strong>behavioral reinforcement, not financial anxiety.</strong> CRED's own research shows 79% of creditworthy Indians find credit stressful <span class="src-badge">CRED press, Feb 2025</span>. A feature that adds to that stress will be disabled. A feature built around momentum and pride will be opened every Monday.</p>
   <div class="beh">
     <div class="beh-t">"Financial discipline should feel like progress, not a report card."</div>
-    <p style="font-size:13.5px;color:var(--muted);margin:0 0 2px;">Three principles that govern every element of the Health Score:</p>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 2px;">Three design principles that govern every element of the Health Score:</p>
     <div class="beh-row">
-      <div class="beh-item"><span class="beh-e">🔥</span><div class="beh-l"><strong>Momentum over milestones</strong>Streaks and consistent records are worth more than one-time badges.</div></div>
-      <div class="beh-item"><span class="beh-e">📈</span><div class="beh-l"><strong>Progress visibility</strong>The 12-week chart makes financial improvement visual and satisfying.</div></div>
-      <div class="beh-item"><span class="beh-e">🎯</span><div class="beh-l"><strong>Actionable, never alarmist</strong>"Pay early this week" beats "your score dropped."</div></div>
+      <div class="beh-item"><span class="beh-e">🔥</span><div class="beh-l"><strong>Momentum over milestones</strong>Streaks and consistent records are worth more than one-time badges. A 14-week record creates loss aversion that drives weekly opens.</div></div>
+      <div class="beh-item"><span class="beh-e">📈</span><div class="beh-l"><strong>Progress visibility</strong>The 12-week chart makes financial improvement visual and satisfying — the same reason fitness apps with graphs retain better than those without.</div></div>
+      <div class="beh-item"><span class="beh-e">🎯</span><div class="beh-l"><strong>Actionable, never alarmist</strong>"Pay early this week" beats "your score dropped." Confidence drives behavior change; shame drives app deletion.</div></div>
     </div>
   </div>
 </div>
 
+<!-- 08 STRATEGIC FIT -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">08</span><div class="sl-r"></div><span class="sl-t">Strategic Fit</span></div>
-  <h2>Why This Works for CRED Specifically</h2>
+  <h2>Why This Works for CRED Specifically in 2025–26</h2>
   <div class="tw">
     <table>
-      <thead><tr><th>Strategic Dimension</th><th>Why It Works</th></tr></thead>
+      <thead><tr><th>Strategic Dimension</th><th>FY25 Evidence</th></tr></thead>
       <tbody>
-        <tr><td>CRED already owns the data</td><td>CRED processes ₹6.87 lakh crore annually (FY24). Health Score is a synthesis layer — zero new integrations at launch.</td></tr>
-        <tr><td>Brand DNA alignment</td><td>A behavioral score reinforcing "financially responsible" identity deepens the brand–user emotional contract without extending CRED in a new direction.</td></tr>
-        <tr><td>Weekly engagement, not monthly spikes</td><td>Score updates every Monday. One insight per week creates a recurring check-in habit independent of bill payment cycles.</td></tr>
-        <tr><td>Natural multi-product pathway</td><td>Behavioral data creates contextually appropriate moments for CRED's ecosystem — driving 35%→50% multi-product adoption through relevance, not interruption.</td></tr>
-        <tr><td>Complements Svalbard</td><td>Svalbard: "What should I do about my credit?" Health Score: "How is my financial life going this week?" Different user states. Complementary, not competing.</td></tr>
-        <tr><td>Deepens without diluting ICP</td><td>Unlike expanding to lower CIBIL (tried and reversed 2023), this creates more value for the existing 750+ segment — the users CRED knows generate the best outcomes.</td></tr>
+        <tr><td>CRED already owns the data</td><td>₹8.5 lakh crore in TPV processed in FY25. 14.4 transactions/user/month. The Health Score is a synthesis layer — zero new data acquisition. The infrastructure exists.</td></tr>
+        <tr><td>Multi-product momentum to accelerate</td><td>45% of active members now use 3+ products (FY25, up from 35% FY24). Health Score's contextual cross-sell gateway accelerates this toward 55%+ by surfacing Kuvera, CRED Money, CRED Cash+ at behavioral moments.</td></tr>
+        <tr><td>FY26 profitability target creates urgency</td><td>CRED targets full profitability in FY26. Increasing ARPU from ₹2,000 (FY25 baseline) requires either more users or more products per user. The Health Score drives the latter — the faster, lower-CAC path.</td></tr>
+        <tr><td>Kuvera + CRED Money already integrated</td><td>CRED acquired Kuvera in Feb 2024. CRED Money launched in FY25. Both need behavioral triggers to drive adoption. The Health Score creates the "investable surplus" behavioral signal that makes Kuvera suggestions feel earned, not intrusive.</td></tr>
+        <tr><td>Complements Svalbard, doesn't compete</td><td>Svalbard (Feb 2025) answers: "What should I do about my credit?" Health Score answers: "How is my financial life going this week?" Different triggers, different user states, different frequency. Both deepen CRED's financial identity positioning.</td></tr>
+        <tr><td>60% of India's multi-card holders are on CRED</td><td>Multi-card holders are exactly the users most likely to have nuanced utilization patterns worth tracking. The Health Score is most valuable for CRED's densest segment. <span class="src-badge">YourStory, Jan 2026</span></td></tr>
       </tbody>
     </table>
   </div>
 </div>
 
+<!-- 09 METRICS -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">09</span><div class="sl-r"></div><span class="sl-t">Success Metrics</span></div>
   <h2>How We Measure Success</h2>
@@ -611,32 +669,34 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
     <div class="co-ic">📌</div>
     <div class="co-b">
       <h4>Measurement caveat</h4>
-      <p>CRED's internal WAU/MAU and feature-level retention data are not publicly available. Fintech DAU/MAU benchmarks (15–30%, Northbeam 2024) are used as directional reference. All targets are hypotheses to validate against internal cohort data before building.</p>
+      <p>CRED's internal WAU/MAU ratio and feature-level engagement are not publicly disclosed. The FY25 press release provides MTU, transaction frequency, and multi-product adoption baselines — those are the grounded targets below. Fintech DAU/MAU benchmarks (15–30%, Northbeam/Embarque 2024) are used as directional reference for the engagement targets. All targets are hypotheses to be validated against internal cohort data before building.</p>
     </div>
   </div>
   <div class="mts">
-    <div class="mc2 pri"><div class="mt2">⭐ North Star</div><div class="mn">Weekly Active Users (WAU)</div><div class="md">Users opening CRED at least once per week. Currently driven only by monthly bill spikes. Health Score creates a Monday check-in independent of payment events.</div><div class="mtg">Target: shift WAU/MAU toward 35–40%</div></div>
-    <div class="mc2 pri"><div class="mt2">⭐ Depth Metric</div><div class="mn">Multi-Product Adoption</div><div class="md">% of MAU using 3+ CRED products. FY24 baseline: 35%. Score-triggered contextual cross-sell creates natural discovery at moments of behavioral relevance.</div><div class="mtg">Target: 45% → 60% multi-product adoption</div></div>
-    <div class="mc2"><div class="mt2">Secondary</div><div class="mn">Weekly Score Check-In Rate</div><div class="md">% of MAU viewing Health Score at least once per week. Below 30% = discovery problem. Above 55% = strong habit formation.</div><div class="mtg">Target: 55%+ weekly check-in rate</div></div>
-    <div class="mc2"><div class="mt2">Secondary</div><div class="mn">Cross-Product Click-Through</div><div class="md">% of score sessions resulting in a click to a secondary product (Kuvera, CRED Store, CRED Cash).</div><div class="mtg">Target: 12%+ CTR to secondary products</div></div>
-    <div class="mc2"><div class="mt2">Guardrail</div><div class="mn">Insight Opt-Out Rate</div><div class="md">Users who disable the weekly insight. Above 20% → quality or relevance needs redesign.</div><div class="mtg">Keep opt-out below 20%</div></div>
-    <div class="mc2"><div class="mt2">Guardrail</div><div class="mn">Anxiety Indicator</div><div class="md">Uninstall rate in weeks following a negative score signal. Any spike correlated with score drops is a design failure.</div><div class="mtg">No uninstall spike in score-drop cohorts</div></div>
+    <div class="mc2 pri"><div class="mt2">⭐ North Star</div><div class="mn">Weekly Active Users (WAU)</div><div class="md">Users opening CRED at least once per week — independent of bill payment events. Currently engagement is driven by 14.4 transactions/month (payment-triggered). Health Score creates a Monday habit: check weekly score. WAU/MAU is the structural engagement shift this feature is designed to drive.</div><div class="mtg">Target: WAU/MAU toward 35–40% (from estimated current ~15%)</div></div>
+    <div class="mc2 pri"><div class="mt2">⭐ Revenue Metric</div><div class="mn">Multi-Product Adoption Rate</div><div class="md">% of active members using 3+ CRED products. FY25 baseline: 45% (up from 35% FY24 — confirmed). Health Score's contextual gateway accelerates the remaining 55% toward the 3+ product threshold. CRED's path to FY26 profitability runs through ARPU depth, not user volume.</div><div class="mtg">Target: 45% → 55%+ multi-product adoption (FY25 → FY26)</div></div>
+    <div class="mc2"><div class="mt2">Secondary</div><div class="mn">Weekly Score Check-In Rate</div><div class="md">% of MTU (12.6M baseline) who view Health Score at least once per week. Below 30% = discovery or quality problem. Above 55% = strong habit formation confirmed.</div><div class="mtg">Target: 55%+ weekly score check-in rate</div></div>
+    <div class="mc2"><div class="mt2">Secondary</div><div class="mn">ARPU Impact</div><div class="md">ARPU at ₹2,000 (FY25 baseline). Multi-product adoption and Health Score-triggered Kuvera/CRED Money/CRED Cash+ discovery should drive ARPU toward ₹2,500+ as more members adopt deeper products.</div><div class="mtg">Target: ARPU ₹2,000 → ₹2,500+ (FY26)</div></div>
+    <div class="mc2"><div class="mt2">Guardrail</div><div class="mn">Weekly Insight Opt-Out Rate</div><div class="md">Users who disable the weekly insight. One-insight-per-week constraint keeps this low. Above 20% = quality or relevance needs redesign immediately.</div><div class="mtg">Keep opt-out below 20%</div></div>
+    <div class="mc2"><div class="mt2">Guardrail</div><div class="mn">Anxiety Indicator</div><div class="md">Uninstall rate in weeks following a negative score signal. Any spike correlated with score drops is a design failure — the behavioral design principle (progress, not punishment) must be validated first in beta.</div><div class="mtg">No uninstall spike in score-drop cohorts</div></div>
   </div>
 </div>
 
+<!-- 10 RISKS -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">10</span><div class="sl-r"></div><span class="sl-t">Risk Analysis</span></div>
   <h2>Potential Risks — and How to Mitigate Them</h2>
   <div class="risk-g">
     <div class="rr"><div class="rc rr-h"><span class="rr-ht">Risk</span></div><div class="rc rr-h"><span class="rr-ht">Mitigation</span></div><div class="rc rr-h"><span class="rr-ht">Confidence</span></div></div>
-    <div class="rr"><div class="rc rc-r">Users may not trust a proprietary score over CIBIL</div><div class="rc rc-m">Transparent explanation for every movement. Positioned as CRED's behavioral lens, not a CIBIL replacement. Every insight traceable to a real transaction.</div><div class="rc rc-m">Design-controlled — transparency is a product decision</div></div>
-    <div class="rr"><div class="rc rc-r">Score drops create financial anxiety — drive uninstalls</div><div class="rc rc-m">Score-drop weeks lead with explanation and one action, never the number alone. Validate tone in user testing before rollout.</div><div class="rc rc-m">High confidence — proven in fitness app analogues</div></div>
-    <div class="rr"><div class="rc rc-r">Weekly nudges feel repetitive after 4–6 weeks</div><div class="rc rc-m">Map 40+ distinct insight types. A/B test variety monthly. Quality gate: redesign if opt-out exceeds 20%.</div><div class="rc rc-m">Medium — requires continuous content engineering</div></div>
-    <div class="rr"><div class="rc rc-r">Feature becomes passive dashboard — users check and leave</div><div class="rc rc-m">Tie score changes to one action in same screen. Cross-product gateway embedded Day 1. Recalibrate if CTR below 8% at 90 days.</div><div class="rc rc-m">Manageable — Feed and cross-sell coupled by design</div></div>
-    <div class="rr"><div class="rc rc-r">Engagement improves but multi-product adoption doesn't</div><div class="rc rc-m">Track WAU and multi-product adoption together. If WAU rises but adoption is flat at 90 days, recalibrate the gateway logic.</div><div class="rc rc-m">Measurable — clear separation of metrics from Day 1</div></div>
+    <div class="rr"><div class="rc rc-r">Users don't trust a proprietary score — "why should I trust CRED's number over CIBIL?"</div><div class="rc rc-m">Transparent explanation for every movement. Positioned as CRED's behavioral lens, not a CIBIL replacement. Every insight traceable to a real transaction. Svalbard already established CRED's credibility in credit management.</div><div class="rc rc-m">Design-controlled — transparency is a product decision, not technical</div></div>
+    <div class="rr"><div class="rc rc-r">Score drops create financial anxiety — drives uninstalls in a cohort where 79% already find credit stressful</div><div class="rc rc-m">Score-drop weeks lead with explanation and one action, never the number alone. Validate tone and framing with 10+ user tests before any beta rollout.</div><div class="rc rc-m">High confidence — proven in fitness and language app analogues</div></div>
+    <div class="rr"><div class="rc rc-r">Weekly nudges feel repetitive — novelty fades after 4–6 weeks</div><div class="rc rc-m">Map 40+ distinct insight types across spend categories, utilization, timing, streaks, seasonal patterns. A/B test variety monthly. Quality gate: opt-out above 20% triggers immediate redesign.</div><div class="rc rc-m">Medium — requires continuous content engineering commitment</div></div>
+    <div class="rr"><div class="rc rc-r">Feature becomes passive dashboard — check and leave, no cross-sell</div><div class="rc rc-m">Cross-product gateway embedded from Day 1 with behavioral trigger logic. If CTR to secondary products is below 8% at D90, recalibrate targeting logic before conclusion.</div><div class="rc rc-m">Manageable — Feed and cross-sell coupled by design</div></div>
+    <div class="rr"><div class="rc rc-r">WAU improves but multi-product adoption doesn't — engagement without ARPU impact</div><div class="rc rc-m">Track WAU AND multi-product adoption together from Day 1. If WAU rises but 3+ product adoption stays at 45% by D90, recalibrate gateway targeting — not the feature itself.</div><div class="rc rc-m">Measurable — clear metric separation from launch</div></div>
   </div>
 </div>
 
+<!-- 11 ALTERNATIVES -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">11</span><div class="sl-r"></div><span class="sl-t">Alternatives Considered</span></div>
   <h2>What Was Considered and Rejected</h2>
@@ -644,51 +704,57 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
     <table>
       <thead><tr><th>Alternative</th><th>Why Rejected</th></tr></thead>
       <tbody>
-        <tr><td>Expand to lower CIBIL (&lt;750)</td><td>CRED tried mid-2022, reversed mid-2023. Lower-CIBIL users "weren't generating transactions." (SiliconIndia Jun 2024.) ICP is correct — engagement model needs improving, not the audience.</td></tr>
-        <tr><td>More viral ad campaigns</td><td>CRED ran multiple high-visibility campaigns during the plateau. Brand awareness is strong. The problem is inside the product — marketing cannot fix a behavior frequency gap.</td></tr>
-        <tr><td>Simple CIBIL score display</td><td>BankBazaar, Paisa Bazaar, Paytm already show CIBIL free. Commodity feature doesn't create lock-in. CRED also already has Svalbard for credit depth.</td></tr>
-        <tr><td>Aggressive push notifications</td><td>Push spam boosts DAU short-term but tanks retention. CRED's premium users are especially intolerant of irrelevant notifications. One high-quality insight beats ten generic nudges.</td></tr>
-        <tr><td>CRED Pay frequency push</td><td>₹8.5 lakh crore processed in FY25. But UPI volume share is 0.75% vs. PhonePe's dominance. Competing on payment frequency is a low-ARPU game. CRED's differentiation is identity — not convenience.</td></tr>
+        <tr><td>Expand to lower CIBIL scores (&lt;750)</td><td>CRED tried mid-2022, reversed mid-2023. Lower-CIBIL users "weren't generating transactions or buying products." (Former CRED official, SiliconIndia Jun 2024.) ICP confirmed correct — engagement model needs improving, not the audience definition.</td></tr>
+        <tr><td>More viral ad campaigns</td><td>CRED ran multiple high-visibility campaigns during the 2022–2024 growth plateau. Brand awareness is demonstrably strong. The problem is inside the product. Marketing cannot fix a behavioral habit gap.</td></tr>
+        <tr><td>Simple CIBIL score display</td><td>BankBazaar, Paisa Bazaar, Paytm all show CIBIL scores for free. A commodity feature creates no lock-in. CRED already has Svalbard for credit depth. Health Score must be genuinely differentiated through behavioral synthesis, not score display.</td></tr>
+        <tr><td>Aggressive push notification campaigns</td><td>CRED's premium users (15M+ members, ₹2,000 ARPU) are especially intolerant of irrelevant notifications. Push spam damages brand trust faster than it improves engagement. One high-quality weekly insight far outperforms ten generic nudges.</td></tr>
+        <tr><td>CRED Pay frequency push to compete with PhonePe</td><td>CRED Pay growth is real (₹8.5L Cr TPV FY25). But CRED's UPI volume share is 0.73–0.8% vs. PhonePe's 45%+ (Dec 2025 data). Competing on UPI payment frequency is a losing game against PhonePe's infrastructure. CRED's moat is premium financial identity — not payment convenience.</td></tr>
       </tbody>
     </table>
   </div>
 </div>
 
+<!-- 12 VALIDATION -->
 <div class="sec fi">
   <div class="sec-lbl"><span class="sl-n">12</span><div class="sl-r"></div><span class="sl-t">Validation Plan</span></div>
   <h2>What I Would Validate Before Building</h2>
   <div class="val-blk">
     <div class="val-hd"><span>#</span><span>Question</span><span>Method</span><span>Timeline</span></div>
-    <div class="val-rw"><span class="v-n">01</span><span class="v-q">What is CRED's actual WAU/MAU — and on which day does drop-off occur?</span><span class="v-h">Pull from Amplitude/Mixpanel. Segment by product, city, CIBIL tier.</span><span class="v-t">3 days</span></div>
-    <div class="val-rw"><span class="v-n">02</span><span class="v-q">Do Svalbard-activated users show higher weekly engagement — or one-time open?</span><span class="v-h">Cohort: Svalbard-activated vs non-activated at D7, D14, D30, D60.</span><span class="v-t">1 week</span></div>
-    <div class="val-rw"><span class="v-n">03</span><span class="v-q">Would users with stable scores find a weekly behavioral insight valuable — or intrusive?</span><span class="v-h">5–7 user interviews: 800+ CIBIL, 2+ cards, haven't used Svalbard in 30 days.</span><span class="v-t">1 week</span></div>
-    <div class="val-rw"><span class="v-n">04</span><span class="v-q">Does a weekly behavioral score increase click-through to Kuvera / CRED Store / CRED Cash?</span><span class="v-h">A/B test: 500 with Health Score + cross-sell vs. 500 control. Measure at D30 and D60.</span><span class="v-t">4 weeks</span></div>
+    <div class="val-rw"><span class="v-n">01</span><span class="v-q">What is CRED's actual WAU/MAU — and on which day does the drop-off from payment-day spike occur?</span><span class="v-h">Pull from Amplitude/Mixpanel. Segment by product used, city tier, CIBIL band. Confirm whether the 14.4 txn/month figure is clustered around bill dates or distributed.</span><span class="v-t">3 days</span></div>
+    <div class="val-rw"><span class="v-n">02</span><span class="v-q">Do Svalbard-activated users (Foresight/Compass) show sustained weekly engagement — or one-time open and plateau?</span><span class="v-h">Cohort analysis: Svalbard-activated vs non-activated at D7, D14, D30, D60. If Svalbard users also plateau, confirms the need for a recurring weekly narrative beyond episodic credit tools.</span><span class="v-t">1 week</span></div>
+    <div class="val-rw"><span class="v-n">03</span><span class="v-q">Would users with stable, high scores (the 45%+ at 3+ products) find a weekly behavioral insight valuable — or just noise?</span><span class="v-h">5–7 user interviews: 800+ CIBIL, 2+ cards, already on 3+ CRED products. If even engaged users don't value the weekly narrative, scope it back. If they do, they become the launch cohort.</span><span class="v-t">1 week</span></div>
+    <div class="val-rw"><span class="v-n">04</span><span class="v-q">Does a weekly behavioral score increase clicks to Kuvera / CRED Money / CRED Cash+ vs. control?</span><span class="v-h">A/B test: 500 MTU with Health Score + contextual cross-sell vs. 500 control. Measure Kuvera/Money/Cash+ sessions at D30 and D60. This is the ARPU validation gate.</span><span class="v-t">4 weeks</span></div>
   </div>
+
   <div class="caveat">
-    <div class="cav-h">📌 Honest Caveat</div>
-    <p style="font-size:13.5px;color:var(--muted);line-height:1.72;margin-bottom:10px;"><strong style="color:var(--tx);">Verified:</strong> 13M MAU plateau referenced in SiliconIndia Jun 2024, Wikipedia, CRED press releases. FY24 financials from CRED's own press release. 35% multi-product baseline from CRED FY24. Svalbard details from YourStory / AIM / The Week (Feb 2025). UPI share from Inc42 (Sep 2025). Design system from cred.club/design.</p>
-    <p style="font-size:13.5px;color:var(--muted);line-height:1.72;margin:0;"><strong style="color:var(--tx);">Reasoned hypothesis:</strong> Internal DAU/MAU and retention data are not publicly available. The engagement hypothesis should be validated against internal cohort data before any implementation decision.</p>
+    <div class="cav-h">📌 Honest Caveat — Verified vs. Hypothesised</div>
+    <p style="font-size:13.5px;color:var(--muted);line-height:1.72;margin-bottom:10px;"><strong style="color:var(--tx);">Verified from public sources:</strong> All financial metrics (revenue, losses, MTU, TPV, ARPU, multi-product adoption, AUM) are from CRED's own press release (Jan 30, 2026), confirmed by Entrackr, YourStory, BW Disrupt, Indian Startup News. The 15M members figure is from OpenAI's CRED case study (Nov 2025) and YourStory (Jan 2026). UPI share data is from NPCI data cited by AngelOne (Jan 2026) and Entrackr (May 2025). Svalbard details from YourStory/AIM/The Week (Feb 2025). India credit card TAM from SaveSage citing RBI Q3 2025 data.</p>
+       <p style="font-size:13.5px;color:var(--muted);line-height:1.72;margin:0;"><strong style="color:var(--tx);">Reasoned hypothesis:</strong> Internal WAU/MAU split, day-of-week app open distribution, and feature-level retention are not publicly available. The behavioral engagement gap hypothesis is inferred from public metrics, user reviews, and product teardowns. The engagement model should be validated against CRED's internal cohort data before any build commitment.</p>
   </div>
 </div>
 
+<!-- 13 SOURCES -->
 <div class="sec fi">
-  <div class="sec-lbl"><span class="sl-n">13</span><div class="sl-r"></div><span class="sl-t">Research Sources</span></div>
-  <h2>Sources — All Public, All Verified</h2>
+  <div class="sec-lbl"><span class="sl-n">13</span><div class="sl-r"></div><span class="sl-t">All Sources</span></div>
+  <h2>Research Sources — All Public, All Verified</h2>
   <div class="srcs">
-    <div class="src-h">Every claim traces to one of these sources</div>
+    <div class="src-h">Every data point in this case study traces to one of these sources</div>
     <ul class="src-list">
-      <li><span class="src-dot">◆</span><span><strong>CRED FY24 Press Release</strong> (Sep 2024) — Revenue ₹2,473Cr, MTU +34%, 35% multi-product adoption, loss -41%. Cited by Entrackr.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>SiliconIndia</strong> (Jun 2024) — "CRED's user base remains steady at 13 million over the last 18 months." Quotes former CRED official on lower-CIBIL reversal.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>Wikipedia — CRED (company)</strong> (Apr 2026) — 13M MAU June 2024, UPI ~1% share, Kuvera acquisition, product timeline.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>Inc42</strong> (Sep 2025) — UPI Aug 2024–Aug 2025: +1.71% txn count, +10% value. 0.75% volume share, 2.24% value share.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>Inc42</strong> (Mar 2025) — MTU crossed 12M Dec 2024. Monetised base +58% YoY. Cites Fitch Ratings.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>YourStory / AIM / The Week</strong> (Feb 2025) — Svalbard: Foresight, Compass, Aurora. Kunal Shah quotes. 79% credit stress stat.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>The Ken (Ka-Ching!)</strong> (Oct 2024) — CRED ARPU ~₹1,900. ~1/3 MAU monetised. +58% monetisable base YoY.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>Inc42</strong> (May 2024) — India credit card market: 102M cards Apr 2024 (RBI). CRED Coins perception gap.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>CanvasBusinessModel.com</strong> (2026) — Series G $75M May 2025, GIC + QED. Valuation $3.5B.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>IIDE Case Study</strong> (2026) — ~20% of India credit card bill payments via CRED.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>CRED Design Manifesto</strong> (cred.club/design, May 2026) — NeoPOP system, Circa font, dark-first #1a1b1d, open-source library.</span></li>
-      <li><span class="src-dot">◆</span><span><strong>Fintech DAU/MAU Benchmarks</strong> — 15–30% range: Northbeam/Embarque 2024. 37% cross-industry WAU/MAU: Mixpanel 2024.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>CRED FY25 Press Release</strong> (Jan 30, 2026) — Revenue ₹2,735Cr (+16%), MTU 12.6M (+14.5%), txn frequency 14.4/month (+34%), TPV ₹8.5L Cr (+23%), multi-product adoption 45%, ARPU ₹2,000, lending AUM ₹22,000Cr, op losses -51%. Cited by Entrackr, YourStory, BW Disrupt, Indian Startup News.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>YourStory</strong> (Jan 30, 2026) — "CRED posts 16% jump in FY25 revenue." 15M total members confirmed. 50%+ of new credit cards go to CRED members. 60% of India's multi-card holders on CRED. Highest ARPU in India payments ecosystem.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>OpenAI case study — Swamy Seetharaman, CRED</strong> (Nov 5, 2025) — "Today, over 15 million members use CRED each month." CRED + OpenAI partnership for AI-powered premium customer experiences at scale.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>YourStory / AIM / The Week</strong> (Feb 25–26, 2025) — Svalbard launch: Foresight, Compass, Aurora. Kunal Shah: "Credit should not be a source of anxiety." 79% credit stress stat. 54% would invest more with better credit confidence.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>AngelOne citing NPCI</strong> (Jan 2026) — UPI Dec 2025: CRED 157.25M transactions, ~0.73% volume share. "CRED registered nearly 3x the transaction value of BHIM — highlighting its higher-value usage."</span></li>
+      <li><span class="src-dot">◆</span><span><strong>AngelOne citing NPCI</strong> (Jun 2025) — CRED UPI May 2025: 141.95M transactions, ₹55,242.72 crore value (2.20% value share). "Positions CRED as a go-to platform for premium or high-ticket transactions."</span></li>
+      <li><span class="src-dot">◆</span><span><strong>Entrackr</strong> (May 2025) — CRED UPI April 2025: 134.67M transactions, ₹49,753 crore value. "CRED targets high-value transfers." Volume 0.75%, value disproportionately higher.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>DD News / Entrackr</strong> (Sep 2025) — UPI crosses 20 billion transactions in August 2025 for first time. CRED: ~219M transactions in August 2025.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>SiliconIndia</strong> (Jun 2024) — "CRED's user base remains steady at 13 million over the last 18 months." Former CRED official quotes on lower-CIBIL experiment reversal mid-2023.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>Wikipedia — CRED (company)</strong> (Apr 2026) — 13M MAU June 2024, Kuvera acquisition Feb 2024, Happay sale to MakeMyTrip Nov 2024, product timeline.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>NewsBytesApp</strong> (Jan 2026) — CRED cash reserves ~₹1,000 crore. Series G $72M (GIC) at $3.64B valuation, May 2025. Targeting EBITDA profitability FY26.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>SaveSage citing RBI</strong> (2025) — India active credit cards: 113M+ as of Q3 2025, growing ~8% YoY. India expected to reach 200M cards by FY28-29 (CAGR 15%). Source: Reserve Bank of India.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>GrabOn / OxigenWallet citing NPCI</strong> (2025–2026) — UPI totals: 228.3B transactions in 2025 (+74% YoY). PhonePe 45.35%, GPay 34.64%, CRED 0.73–0.8% volume share as of late 2025.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>CRED Design Manifesto</strong> (cred.club/design, May 2026) — NeoPOP design system, Circa font, dark-first (#1a1b1d) aesthetic, physical UI metaphors, open-source component library.</span></li>
+      <li><span class="src-dot">◆</span><span><strong>Fintech DAU/MAU Benchmarks</strong> — 15–30% fintech DAU/MAU range: Northbeam/Embarque 2024. 37% cross-industry WAU/MAU average: Mixpanel State of Digital Analytics 2026 (3.7T events, 12,000+ companies).</span></li>
     </ul>
   </div>
 </div>
@@ -697,8 +763,7 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
 
 <footer>
   <div><div class="f-name">Chakri Sama</div><div class="f-role">PM Case Study · CRED · Fintech · May 2026</div></div>
-  <div class="f-links"><a href="#">Portfolio</a><a href="https://www.linkedin.com/in/samachakri/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-  <a href="#">All Case Studies</a></div>
+  <div class="f-links"><a href="#">Portfolio</a><a href="#">LinkedIn</a><a href="#">All Case Studies</a></div>
 </footer>
 
 <!-- ══════ PROTOTYPE MODAL ══════ -->
@@ -712,58 +777,49 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
 
       <div class="pm-screen active" id="s0">
         <div class="pm-card">
-          <div class="pm-card-topbar">
-            <div class="pm-app-name">CR<span>ED</span></div>
-            <span class="pm-screen-tag st-prob">The Problem</span>
-          </div>
+          <div class="pm-card-topbar"><div class="pm-app-name">CR<span>ED</span></div><span class="pm-screen-tag st-prob">The Problem</span></div>
           <div class="pm-card-body">
-            <div class="s0-headline">Bill day.<br>Open. Pay. Close.</div>
-            <p class="s0-sub">"Is CRED just a bill payment app with better design?" — Most CRED users, 2024.</p>
+            <div class="s0-h">Bill day.<br>Open. Pay. Close.</div>
+            <p class="s0-sub">"Is CRED just a bill payment app?" — 55% of members still use only 1–2 products. FY25 data.</p>
             <div class="s0-box">
-              <div class="s0-box-h">💬 CRED user behavior</div>
-              <div class="s0-chat">I have CRED but I only open it on the 5th of every month. That's literally it.</div>
+              <div class="s0-bh">💬 Real CRED user behavior pattern</div>
+              <div class="s0-chat">I only open CRED on the 5th of every month. That's literally it.</div>
               <div class="s0-time">Delivered · Seen</div>
               <div class="s0-rows">
                 <div class="s0-row"><span>Last opened CRED</span><span>27 days ago</span></div>
-                <div class="s0-row"><span>Products used</span><span>1 of 8</span></div>
-                <div class="s0-row"><span>Weekly opens</span><span>0.9× / month</span></div>
-                <div class="s0-row"><span>Ecosystem adoption</span><span>None ✗</span></div>
+                <div class="s0-row"><span>Products used</span><span>1 of 8+</span></div>
+                <div class="s0-row"><span>Svalbard opened</span><span>Once · Never returned</span></div>
+                <div class="s0-row"><span>3+ product adoption</span><span>Not yet ✗</span></div>
               </div>
-              <div class="s0-alert">⏰ One app open per month. Just for bill payment.</div>
+              <div class="s0-alert">⏰ 14.4 txn/month — but all payment-triggered. No weekly habit.</div>
             </div>
-            <p class="s0-stat">Users with CIBIL <strong>800+</strong> — CRED's best members — have <strong>no weekly reason</strong> to open the app. Their score is fine. Their bills are paid. Nothing pulls them back.</p>
+            <p class="s0-stat">CRED has <strong>15M+ members</strong> and ₹2,000 ARPU. The path to FY26 profitability requires converting the <strong>55% still on 1–2 products</strong> to 3+. That needs a weekly reason to return.</p>
           </div>
         </div>
       </div>
 
       <div class="pm-screen" id="s1">
         <div class="pm-card">
-          <div class="pm-card-topbar">
-            <div class="pm-app-name">CR<span>ED</span></div>
-            <span class="pm-screen-tag st-score">Health Score</span>
-          </div>
+          <div class="pm-card-topbar"><div class="pm-app-name">CR<span>ED</span></div><span class="pm-screen-tag st-score">Health Score</span></div>
           <div class="pm-card-body">
             <div style="font-size:12.5px;color:#666;margin-bottom:8px;">Your financial identity. Updated every Monday.</div>
             <div class="s1-hero">
               <div class="s1-lbl">CRED HEALTH SCORE</div>
-              <div class="s1-row">
-                <div class="s1-big">812</div>
-                <div class="s1-d"><span>↑ +8 this week</span><small>Excellent range</small></div>
-              </div>
+              <div class="s1-row"><div class="s1-big">812</div><div class="s1-d"><span>↑ +8 this week</span><small>Excellent range</small></div></div>
               <div class="s1-bar"><div class="s1-fill" style="width:85%"></div></div>
               <div class="s1-range"><span>Poor 300</span><span>Good 700</span><span>Excellent 900</span></div>
             </div>
             <div class="s1-tiles">
-              <div class="s1-tile"><div class="s1-tile-l">Bills this month</div><div class="s1-tile-v tvg">2/2 ✓</div></div>
-              <div class="s1-tile"><div class="s1-tile-l">Utilization avg</div><div class="s1-tile-v tvgold">27%</div></div>
+              <div class="s1-tile"><div class="s1-tl">Bills this month</div><div class="s1-tv tvg">2/2 ✓</div></div>
+              <div class="s1-tile"><div class="s1-tl">Utilization avg</div><div class="s1-tv tvgold">27%</div></div>
             </div>
             <div class="s1-bd">
-              <div class="s1-bd-h">Score composition — why it moved</div>
-              <div class="s1-bd-row"><span class="s1-bd-lbl">Payment history</span><span class="s1-bd-val bv-ex">Excellent</span></div>
+              <div class="s1-bdh">Score composition — why it moved</div>
+              <div class="s1-bdr"><span class="s1-bdl">Payment history</span><span class="s1-bdv bv-ex">Excellent</span></div>
               <div class="s1-bbar"><div class="s1-bfill" style="width:92%"></div></div>
-              <div class="s1-bd-row"><span class="s1-bd-lbl">Credit utilization</span><span class="s1-bd-val bv-gd">Good</span></div>
+              <div class="s1-bdr"><span class="s1-bdl">Credit utilization</span><span class="s1-bdv bv-gd">Good</span></div>
               <div class="s1-bbar"><div class="s1-bfill" style="width:74%"></div></div>
-              <div class="s1-bd-row"><span class="s1-bd-lbl">Behavior consistency</span><span class="s1-bd-val bv-ex">Excellent</span></div>
+              <div class="s1-bdr"><span class="s1-bdl">Behavior consistency</span><span class="s1-bdv bv-ex">Excellent</span></div>
               <div class="s1-bbar"><div class="s1-bfill" style="width:88%"></div></div>
             </div>
             <div class="s1-note">🔍 Every score change includes a plain-English explanation. No black-box scoring.</div>
@@ -773,17 +829,11 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
 
       <div class="pm-screen" id="s2">
         <div class="pm-card">
-          <div class="pm-card-topbar">
-            <div class="pm-app-name">CR<span>ED</span></div>
-            <span class="pm-screen-tag st-nudge">Weekly Nudge</span>
-          </div>
+          <div class="pm-card-topbar"><div class="pm-app-name">CR<span>ED</span></div><span class="pm-screen-tag st-nudge">Weekly Nudge</span></div>
           <div class="pm-card-body">
-            <div class="s2-chip">
-              <div class="s2-cl"><div class="s2-cn">812</div><div class="s2-cl2">Health Score</div></div>
-              <div class="s2-cr">↑ +8 this week</div>
-            </div>
+            <div class="s2-chip"><div class="s2-cl"><div class="s2-cn">812</div><div class="s2-cl2">Health Score</div></div><div class="s2-cr">↑ +8 this week</div></div>
             <div class="s2-badge">Week 14 · May 12, 2026</div>
-            <div class="s2-ncard">
+            <div class="s2-nc">
               <div class="s2-nt"><div class="s2-ni">📊</div><div class="s2-nl">This week's insight</div></div>
               <div class="s2-ntitle">HDFC card utilization at 71%</div>
               <div class="s2-nbody">Keeping it under 30% could add ~25–30 points to your score next cycle. You're at ₹35,500 of ₹50,000 limit.</div>
@@ -800,10 +850,7 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
 
       <div class="pm-screen" id="s3">
         <div class="pm-card">
-          <div class="pm-card-topbar">
-            <div class="pm-app-name">CR<span>ED</span></div>
-            <span class="pm-screen-tag st-streak">Streak</span>
-          </div>
+          <div class="pm-card-topbar"><div class="pm-app-name">CR<span>ED</span></div><span class="pm-screen-tag st-streak">Streak</span></div>
           <div class="pm-card-body">
             <div style="font-size:12.5px;color:#666;margin-bottom:8px;">Your financial consistency record.</div>
             <div class="s3-ms">
@@ -813,10 +860,9 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
             </div>
             <div class="s3-dl">Week-by-week record</div>
             <div class="s3-dots">
-              <div class="s3-dot sdon"></div><div class="s3-dot sdon"></div><div class="s3-dot sdon"></div>
-              <div class="s3-dot sdon"></div><div class="s3-dot sdon"></div><div class="s3-dot sdon"></div>
-              <div class="s3-dot sdon"></div><div class="s3-dot sdon"></div><div class="s3-dot sdon"></div>
-              <div class="s3-dot sdon"></div><div class="s3-dot sdon"></div><div class="s3-dot sdon"></div>
+              <div class="s3-dot sdon"></div><div class="s3-dot sdon"></div><div class="s3-dot sdon"></div><div class="s3-dot sdon"></div>
+              <div class="s3-dot sdon"></div><div class="s3-dot sdon"></div><div class="s3-dot sdon"></div><div class="s3-dot sdon"></div>
+              <div class="s3-dot sdon"></div><div class="s3-dot sdon"></div><div class="s3-dot sdon"></div><div class="s3-dot sdon"></div>
               <div class="s3-dot sdon"></div><div class="s3-dot sdon"></div>
             </div>
             <div class="s3-dr"><span>Wk 1</span><span>Wk 14</span></div>
@@ -835,10 +881,7 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
 
       <div class="pm-screen" id="s4">
         <div class="pm-card">
-          <div class="pm-card-topbar">
-            <div class="pm-app-name">CR<span>ED</span></div>
-            <span class="pm-screen-tag st-traj">Trajectory</span>
-          </div>
+          <div class="pm-card-topbar"><div class="pm-app-name">CR<span>ED</span></div><span class="pm-screen-tag st-traj">Trajectory</span></div>
           <div class="pm-card-body">
             <div style="font-size:12.5px;color:#666;margin-bottom:8px;">12 weeks of your financial discipline, visualized.</div>
             <div class="s4-mc">
@@ -848,24 +891,19 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
             <div class="s4-cw">
               <div class="s4-ch">Credit health trend · 12 weeks</div>
               <div class="s4-bars">
-                <div class="s4-bar" style="height:30%"></div>
-                <div class="s4-bar" style="height:38%"></div>
-                <div class="s4-bar" style="height:34%"></div>
-                <div class="s4-bar med" style="height:46%"></div>
+                <div class="s4-bar" style="height:30%"></div><div class="s4-bar" style="height:38%"></div>
+                <div class="s4-bar" style="height:34%"></div><div class="s4-bar med" style="height:46%"></div>
                 <div class="s4-bar med" style="height:50%"></div>
                 <div class="s4-bar dip" style="height:26%"><div class="s4-ann">Util spike</div></div>
-                <div class="s4-bar med" style="height:52%"></div>
-                <div class="s4-bar med" style="height:60%"></div>
-                <div class="s4-bar hl" style="height:70%"></div>
-                <div class="s4-bar hl" style="height:80%"></div>
-                <div class="s4-bar hl" style="height:88%"></div>
-                <div class="s4-bar hl" style="height:97%"></div>
+                <div class="s4-bar med" style="height:52%"></div><div class="s4-bar med" style="height:60%"></div>
+                <div class="s4-bar hl" style="height:70%"></div><div class="s4-bar hl" style="height:80%"></div>
+                <div class="s4-bar hl" style="height:88%"></div><div class="s4-bar hl" style="height:97%"></div>
               </div>
               <div class="s4-range"><span>Wk 1 · 765</span><span>Wk 6</span><span>Wk 12 · 812</span></div>
             </div>
             <div class="s4-ac">
               <div class="s4-ach">⚠️ Why your score dipped in Week 6</div>
-              <div class="s4-acb">SBI card utilization reached 68% — above the 30% threshold. Score recovered over the next 3 weeks as utilization came back down. Trend now strongly upward.</div>
+              <div class="s4-acb">SBI card utilization reached 68% — above the 30% threshold. Score recovered over the next 3 weeks. Trend now strongly upward.</div>
             </div>
           </div>
         </div>
@@ -873,10 +911,7 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
 
       <div class="pm-screen" id="s5">
         <div class="pm-card">
-          <div class="pm-card-topbar">
-            <div class="pm-app-name">CR<span>ED</span></div>
-            <span class="pm-screen-tag st-gate">Gateway</span>
-          </div>
+          <div class="pm-card-topbar"><div class="pm-app-name">CR<span>ED</span></div><span class="pm-screen-tag st-gate">Gateway</span></div>
           <div class="pm-card-body">
             <div style="font-size:12.5px;color:#666;margin-bottom:8px;">Based on your behavior — not ads.</div>
             <div class="s5-top">
@@ -886,7 +921,7 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
             <div class="s5-prod">
               <div class="s5-pt">Based on your score trajectory</div>
               <div class="s5-ph">Your discipline signals investable surplus</div>
-              <div class="s5-ps">14 weeks of consistent behavior suggests financial stability. Start investing with ₹500/month via Kuvera (CRED Money).</div>
+              <div class="s5-ps">14 weeks of consistent behavior suggests financial stability. Start with ₹500/month via Kuvera (CRED Money) — acquired by CRED Feb 2024.</div>
               <div class="s5-pb">Explore CRED Money →</div>
             </div>
             <div class="s5-also">
@@ -897,7 +932,7 @@ footer{border-top:1px solid var(--bd);padding:48px 56px;display:flex;align-items
               </div>
               <div class="s5-item">
                 <div class="s5-ii">💳</div>
-                <div class="s5-it"><strong>CRED Cash · Pre-approved</strong><span>Your utilization history qualifies you for a ₹50,000 credit line at 1.1%/month.</span></div>
+                <div class="s5-it"><strong>CRED Cash+ · Pre-approved</strong><span>Your utilization history qualifies you for a ₹50,000 credit line. CRED Cash+ launched FY25.</span></div>
               </div>
             </div>
             <div class="s5-note">Suggestions based on your behavior · Not ads</div>
